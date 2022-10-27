@@ -4,7 +4,7 @@ import numpy as np
 import random
 
 
-def Simulation():
+def Poker():
     #Number of Player
     average, shape = 7, 0.25
     X = np.random.lognormal(mean=average, sigma=shape, size=1)
@@ -39,7 +39,6 @@ def Simulation():
 
     #BET FIRST
 
-
     #First Round (FLOP): 3 Card on Table
     Card_table_1 = []
     for i in range(3):
@@ -66,9 +65,17 @@ def Simulation():
 
     total_card = len(Card_dist+Card_table_3+Card_03)    
 
-    return Card_dist, Card_table_3, Card_03, total_card, id_card, id_money
+    return (
+        #Card_dist, 
+        #Card_table_3, 
+        #Card_03, 
+        #total_card,
+        Y
+        #id_card, 
+        #id_money
+    )
 
-print(Simulation())
+print(Poker())
     
     
     
