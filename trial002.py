@@ -1,8 +1,8 @@
+from cmath import sqrt
 from multiprocessing.sharedctypes import Value
 from re import A
 import numpy as np
 import random
-
 
 def Poker():
     #Number of Player
@@ -33,11 +33,28 @@ def Poker():
     Card_dist_03 = Card_dist_02.tolist()
 
     id_card = {key: value for key, value in zip(id, Card_dist_03)}
+
+    
+    
+    #Checking if content is Pair
+    stat_pair_01 = []
+    id_card_list = list(id_card.values())
+    for i in range(len(id_card_list)):
+        delta = (id_card_list[i][1] - id_card_list[i][0])**2
+        difference = sqrt(delta)
+        if difference == 13:
+            stat_pair_01.append(1)
+        else :
+            stat_pair_01.append(0)
+    
+    
+    
+    
+    
+    
     
     #Card on Dealer: Before Round 1 (FLOP)
     Card_00 = Card
-
-    #BET FIRST
 
     #First Round (FLOP): 3 Card on Table
     Card_table_1 = []
@@ -66,13 +83,14 @@ def Poker():
     total_card = len(Card_dist+Card_table_3+Card_03)    
 
     return (
-        #Card_dist, 
-        #Card_table_3, 
-        #Card_03, 
-        #total_card,
-        Y
-        #id_card, 
-        #id_money
+        Card_dist, 
+        Card_table_3, 
+        Card_03, 
+        total_card,
+        Y,
+        id_card,
+        pair(),
+        id_money
     )
     
     
