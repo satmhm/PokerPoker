@@ -6,7 +6,7 @@ import random
 
 def Poker():
     #Number of Player
-    average, shape = 7, 0.25
+    average, shape = 7, 0.5
     X = np.random.lognormal(mean=average, sigma=shape, size=1)
     X = np.log2(X)
     Y = int(X)
@@ -74,8 +74,6 @@ def Poker():
         #id_card, 
         #id_money
     )
-
-print(Poker())
     
     
     
